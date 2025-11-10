@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prashant — Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071022 0%, #071827 60%);-webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:36px auto;padding:24px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:#fff}
+    .cta{background:var(--accent);padding:10px 14px;border-radius:10px;color:white;text-decoration:none;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:28px}
+    .intro h1{font-size:34px;margin:0 0 8px}
+    .intro p{margin:0 0 18px;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* photo box */
+    .photo-box{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .photo{width:220px;height:220px;border-radius:12px;background:linear-gradient(180deg,#0a2030,#061021);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .photo img{width:100%;height:100%;object-fit:cover}
+    .upload{font-size:13px;color:var(--muted)}
+    input[type=file]{display:none}
+    .fake-btn{background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:10px;border:1px dashed rgba(255,255,255,0.04);cursor:pointer}
+
+    /* sections */
+    section{margin-top:24px}
+    h2{margin:0 0 10px;font-size:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+    .project-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* footer */
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .projects{grid-template-columns:1fr}
+    }
+
+    @media (max-width:520px){
+      nav{display:none}
+      .container{padding:16px;margin:16px}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .row{display:flex;gap:12px;align-items:center}
+    .badge{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);font-weight:700}
+    .btn{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.03);border:none;cursor:pointer;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">P</div>
+        <div>
+          <div style="font-weight:800">Prashant</div>
+          <div style="font-size:12px;color:var(--muted)">Data Analyst • MCA Student</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#projects">See Projects</a>
+    </header>
+
+    <main class="hero">
+      <div>
+        <div class="card intro">
+          <h1>Hey — I’m Prashant 👋</h1>
+          <p>I’m a data analyst-in-the-making with hands-on experience in Python, MySQL, Excel and Power BI. I turn messy data into clear insights and visuals that help teams decide faster.</p>
+          <div class="skills" id="skills">
+            <div class="skill">Python</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">C / C++</div>
+            <div class="skill">Data Cleaning</div>
+            <div class="skill">Visualization</div>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px">
+            <a class="btn" href="#contact">Hire me</a>
+            <a class="btn" href="#projects">View projects</a>
+            <a class="btn" id="downloadCvBtn" href="#">Download CV</a>
+          </div>
+        </div>
+
+        <section id="projects">
+          <h2>Selected Projects</h2>
+          <div class="projects">
+            <div class="project-card">
+              <div style="font-weight:800">Sales Dashboard (Power BI)</div>
+              <div class="muted">Built interactive sales & KPI dashboard using Power BI. Implemented measures for YoY growth, top products, and regional performance.</div>
+            </div>
+            <div class="project-card">
+              <div style="font-weight:800">Customer Churn Analysis (Python)</div>
+              <div class="muted">Performed EDA, feature engineering, and built a churn prediction model. Visualized drivers of churn using matplotlib and seaborn.</div>
+            </div>
+            <div class="project-card">
+              <div style="font-weight:800">College Results DB (MySQL)</div>
+              <div class="muted">Designed normalized schema, created queries for reporting, and optimized joins & indexes to improve query time.</div>
+            </div>
+            <div class="project-card">
+              <div style="font-weight:800">Interview Prep Dashboard</div>
+              <div class="muted">A simple web app that tracks topics, practice sessions, and mock test scores — helps measure progress week-to-week.</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="photo-box card">
+        <div class="photo" id="photoWrap">
+          <!-- Default placeholder image. Replace by uploading or swapping the src below. -->
+          <img id="profileImage" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><rect fill='%23071a2a' width='100%'/><text x='50%' y='50%' font-size='40' font-family='Inter' fill='%23fff' text-anchor='middle' dominant-baseline='middle'>Upload your photo</text></svg>" alt="profile">
+        </div>
+        <label class="upload fake-btn" for="photoUpload">Upload Photo</label>
+        <input type="file" id="photoUpload" accept="image/*">
+        <div class="muted" style="font-size:13px;text-align:center">Tip: use the "Upload Photo" button to preview your image locally. It won't be uploaded anywhere.</div>
+      </aside>
+    </main>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="card">
+        <p class="muted">I completed BCA (Arcade Business College, Patna) and currently pursuing MCA. I enjoy solving data puzzles, building dashboards, and learning advanced analytics techniques. Outside code, you’ll find me playing cricket or listening to music.</p>
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <div class="badge">Open to internships</div>
+          <div class="badge">Data Cleaning</div>
+          <div class="badge">ETL / Reporting</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div style="font-weight:800">MCA — Amity University, Patna</div>
+          <div class="muted">Started September 11, 2025</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800">BCA — Arcade Business College, Patna</div>
+          <div class="muted">2021 — 2024 • 64% overall</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:800">12th & 10th — Schools in Bihar</div>
+          <div class="muted">Ram Jungle Singh College; Gagan Dev Narayan Singh High School</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card" style="display:flex;gap:14px;flex-direction:column">
+        <div class="muted">I don't store your contact info here. Replace the placeholder email & links with your real ones before sharing this page.</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+          <a class="btn" href="#">LinkedIn</a>
+          <a class="btn" href="#">GitHub</a>
+        </div>
+
+        <form onsubmit="return false" style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+          <input type="text" id="msgName" placeholder="Your name" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);min-width:200px">
+          <input type="email" id="msgEmail" placeholder="Your email" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);min-width:200px">
+          <textarea id="msgBody" placeholder="Message" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);min-width:320px;min-height:80px"></textarea>
+          <button class="btn" onclick="sendMessage()">Send (mailto)</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      Built with ❤️ • Customize this file and host it on GitHub Pages or Netlify.
+    </footer>
+  </div>
+
+  <script>
+    // Preview uploaded profile image locally
+    const fileInput = document.getElementById('photoUpload');
+    const profileImage = document.getElementById('profileImage');
+    fileInput.addEventListener('change', (e)=>{
+      const f = e.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = function(ev){ profileImage.src = ev.target.result; }
+      reader.readAsDataURL(f);
+    });
+
+    // Download a simple placeholder CV (text -> blob). Replace with real CV URL if available.
+    document.getElementById('downloadCvBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const text = `Prashant - CV\n\nAbout:\nData analyst-in-training with skills in Python, MySQL, Excel, Power BI, C/C++.\n\nEducation:\nMCA - Amity University, Patna\nBCA - Arcade Business College, Patna (2021-2024)\n`;
+      const blob = new Blob([text], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Prashant_CV.txt';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    function sendMessage(){
+      const name = document.getElementById('msgName').value || 'Friend';
+      const email = document.getElementById('msgEmail').value || 'your.email@example.com';
+      const body = encodeURIComponent(document.getElementById('msgBody').value || 'Hi');
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent('Message from portfolio - '+name)}&body=${body}`;
+    }
+
+    // Small: let users click the fake button to open file selector
+    document.querySelector('.fake-btn').addEventListener('click', ()=> fileInput.click());
+  </script>
+</body>
+</html>
